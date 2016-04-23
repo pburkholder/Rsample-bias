@@ -15,18 +15,17 @@ sample_is_under_40 <- function(x,size=7,youngsters=4) {
   res
 }
 
-x <- c(TRUE)
-
-for (n in 0:10){
-  a <- sample_is_under_40(all)
-  x <- append(x,a)
-}
 
 loopit <- function(n=10) {
+  x <- c(NULL)
   for (i in 0:n){
     a <- sample_is_under_40(all)
     x <- append(x,a)
   }
-  x
+  sum(x == TRUE)
 }
+
+y <- loopit()
+
+print(y)
 
